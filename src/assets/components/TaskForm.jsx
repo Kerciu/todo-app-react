@@ -5,7 +5,7 @@ import "./TaskForm.css";
 const TaskForm = () => {
     return <header className="app-header">
         <form>
-            <input type="text" className="task-input" placeholder="Enter your tags"/>
+            <input type="text" className="task-input" placeholder="Enter your task"/>
 
             <div className="task-form-bottom-line">
                 <div>

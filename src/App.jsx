@@ -1,6 +1,8 @@
 import React from 'react'
-import './App.css'
 import TaskForm from './assets/components/TaskForm'
+import TaskColumn from './assets/components/TaskColumn'
+
+import './App.css'
 
 const App = () => {
 
@@ -8,7 +10,7 @@ const App = () => {
     <div className='app'>
       <TaskForm />
       <main className='app-main'>
-        <section className='task-column'>Section 1</section>
+        <TaskColumn />
         <section className='task-column'>Section 2</section>
         <section className='task-column'>Section 3</section>
       </main>

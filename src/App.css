@@ -11,6 +11,9 @@
 
 .task-column {
   width: 33.33%;
-  background-color: tomato;
   margin: 20px;
+}
+
+.task-column {
+  background-color: #fff !important;
 }

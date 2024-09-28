@@ -1,4 +1,4 @@
-.app-header {
+.app {
   display: grid;
   grid-template-rows: 150px auto;
 }

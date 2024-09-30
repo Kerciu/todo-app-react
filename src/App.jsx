@@ -12,15 +12,18 @@ const App = () => {
 
   const [tasks, setTasks] = useState([]);
 
-  console.log("tasks", tasks);
+  const handleDelete = (taskIdx) => {
+    const newTasks = tasks.filter((task, idx) => idx !== taskIdx);
+    setTasks(newTasks);
+  }
 
   return (
     <div className='app'>
       <TaskForm setTasks={setTasks}/>
       <main className='app-main'>
-        <TaskColumn title="To Do" icon={todoIcon} tasks={tasks} status="todo"/>
-        <TaskColumn title="Doing" icon={doingIcon} tasks={tasks} status="doing"/>
-        <TaskColumn title="Done" icon={doneIcon} tasks={tasks} status="done"/>
+        <TaskColumn title="To Do" handleDelete={handleDelete} icon={todoIcon} tasks={tasks} status="todo"/>
+        <TaskColumn title="Doing" handleDelete={handleDelete} icon={doingIcon} tasks={tasks} status="doing"/>
+        <TaskColumn title="Done" handleDelete={handleDelete} icon={doneIcon} tasks={tasks} status="done"/>
       </main>
     </div>
   )

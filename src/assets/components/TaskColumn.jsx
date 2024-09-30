@@ -4,7 +4,7 @@ import TaskCard from "./TaskCard"
 import "./TaskColumn.css";
 
 const TaskColumn = (props) => {
-    const {title, icon, tasks, status} = props;
+    const {title, icon, tasks, status, handleDelete} = props;
 
     console.log(tasks, status);
 
@@ -16,7 +16,7 @@ const TaskColumn = (props) => {
         {
             tasks.map((task, idx) => (
                 task.status === status ? (
-                    <TaskCard key={idx} title={task.task} />
+                    <TaskCard key={idx} title={task.task} handleDelete={handleDelete} idx={idx}/>
                   ) : null
             ))
         }

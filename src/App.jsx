@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import TaskForm from './assets/components/TaskForm'
 import TaskColumn from './assets/components/TaskColumn'
 
@@ -8,9 +8,15 @@ import doneIcon from './assets/images/done-tick.png';
 
 import './App.css'
 
+const oldTasks = localStorage.getItem("tasks");
+
 const App = () => {
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(JSON.parse(oldTasks) || []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks))
+  }, [tasks]);
 
   const handleDelete = (taskIdx) => {
     const newTasks = tasks.filter((task, idx) => idx !== taskIdx);

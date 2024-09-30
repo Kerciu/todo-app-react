@@ -12,13 +12,15 @@ const App = () => {
 
   const [tasks, setTasks] = useState([]);
 
+  console.log("tasks", tasks);
+
   return (
     <div className='app'>
       <TaskForm setTasks={setTasks}/>
       <main className='app-main'>
-        <TaskColumn title="To Do" icon={todoIcon}/>
-        <TaskColumn title="Doing" icon={doingIcon}/>
-        <TaskColumn title="Done" icon={doneIcon}/>
+        <TaskColumn title="To Do" icon={todoIcon} tasks={tasks} status="todo"/>
+        <TaskColumn title="Doing" icon={doingIcon} tasks={tasks} status="doing"/>
+        <TaskColumn title="Done" icon={doneIcon} tasks={tasks} status="done"/>
       </main>
     </div>
   )

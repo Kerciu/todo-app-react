@@ -3,7 +3,7 @@ import deleteIcon from "../images/delete.png";
 
 import './TaskCard.css';
 
-const TaskCard = () => {
+const TaskCard = (props) => {
     return (
         <article className="task-card">
             <p className="task-text">Lorem ipsum dolor sit amet.</p>

@@ -6,7 +6,7 @@ const TaskForm = ({setTasks}) => {
 
     const [taskData, setTaskData] = useState({
         task: "",
-        status: "To Do"
+        status: "todo"
     });
 
     const handleChange = (e) => {

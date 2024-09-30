@@ -3,10 +3,10 @@ import deleteIcon from "../images/delete.png";
 
 import './TaskCard.css';
 
-const TaskCard = (props) => {
+const TaskCard = ({title}) => {
     return (
         <article className="task-card">
-            <p className="task-text">Lorem ipsum dolor sit amet.</p>
+            <p className="task-text">{title}</p>
 
             <div className="task-card-bottom-line">
                 <div className="task-delete"><img className="delete-icon" src={deleteIcon} alt="Delete Icon" /></div>

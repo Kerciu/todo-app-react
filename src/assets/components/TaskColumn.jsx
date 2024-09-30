@@ -16,7 +16,7 @@ const TaskColumn = (props) => {
         {
             tasks.map((task, idx) => (
                 task.status === status ? (
-                    <TaskCard key={idx} title={task.task} tags={task.tags} />
+                    <TaskCard key={idx} title={task.task} />
                   ) : null
             ))
         }

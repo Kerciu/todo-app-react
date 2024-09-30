@@ -2,25 +2,25 @@ import React, {useState} from "react";
 
 import "./TaskForm.css";
 
-const TaskForm = () => {
+const TaskForm = ({setTasks}) => {
 
     const [taskData, setTaskData] = useState({
         task: "",
-        status: "To do"
+        status: "To Do"
     });
 
     const handleChange = (e) => {
-
         const {name, value} = e.target;
-
-        setTaskData(prev => {
-            return {...prev, [name]: value};
-        });
+        setTaskData(prev => (
+            {...prev, [name]: value}
+        ));
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(taskData);
+        setTasks(prev => (
+            [...prev, taskData]
+        ));
     }
 
     return <header className="app-header">

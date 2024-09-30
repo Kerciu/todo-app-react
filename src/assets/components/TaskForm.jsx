@@ -4,10 +4,12 @@ import "./TaskForm.css";
 
 const TaskForm = ({setTasks}) => {
 
-    const [taskData, setTaskData] = useState({
+    const defaultObject = {
         task: "",
         status: "todo"
-    });
+    };
+
+    const [taskData, setTaskData] = useState(defaultObject);
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -21,16 +23,23 @@ const TaskForm = ({setTasks}) => {
         setTasks(prev => (
             [...prev, taskData]
         ));
+        setTaskData(defaultObject);
     }
 
     return <header className="app-header">
         <form onSubmit={handleSubmit}>
-            <input type="text" name="task" className="task-input" placeholder="Enter your task" 
-            onChange={handleChange}/>
+            <input 
+                type="text"
+                name="task"
+                className="task-input"
+                placeholder="Enter your task" 
+                value={taskData.task}
+                onChange={handleChange}
+            />
 
             <div className="task-form-bottom-line">
                 <div>
-                    <select className="task-status" name="status" onChange={handleChange}>
+                    <select className="task-status" value={taskData.status} name="status" onChange={handleChange}>
                         <option value="todo">To do</option>
                         <option value="doing">Doing</option>
                         <option value="done">Done</option>
